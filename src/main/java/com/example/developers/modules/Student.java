@@ -19,7 +19,7 @@ public class Student implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "firstname")
+    @Column(name = "firs_name")
     private String firstname;
 
     @Column(name = "last_name")
