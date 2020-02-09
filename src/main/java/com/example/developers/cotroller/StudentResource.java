@@ -56,7 +56,7 @@ public class StudentResource {
         }
         Student result = studentRepository.save(student);
         return ResponseEntity.created(new URI("/api/students/" + result.getId()))
-//            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+                .header("Błąd")
             .body(result);
     }
 
@@ -81,7 +81,7 @@ public class StudentResource {
         }
         Student result = studentRepository.save(student);
         return ResponseEntity.ok()
-//            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, student.getId().toString()))
+                .header("Błąd")
             .body(result);
     }
 
@@ -122,7 +122,7 @@ public class StudentResource {
         log.debug("REST request to delete Student : {}", id);
         studentRepository.deleteById(id);
         return ResponseEntity.noContent()
-//                .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
+                .header("Błąd")
                 .build();
     }
 }

@@ -61,7 +61,7 @@ public class CategoryResource {
         }
         Category result = categoryRepository.save(category);
         return ResponseEntity.created(new URI("/api/categories/" + result.getId()))
-//            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+                .header("Błąd")
             .body(result);
     }
 
@@ -86,7 +86,7 @@ public class CategoryResource {
         }
         Category result = categoryRepository.save(category);
         return ResponseEntity.ok()
-//            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, category.getId().toString()))
+                .header("Błąd")
             .body(result);
     }
 
@@ -129,7 +129,7 @@ public class CategoryResource {
         log.debug("REST request to delete Category : {}", id);
         categoryRepository.deleteById(id);
         return ResponseEntity.noContent()
-//                .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString()))
+                .header("Błąd")
                 .build();
     }
 }
