@@ -20,9 +20,9 @@ import java.util.Optional;
 
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("${path.App}")
 @Transactional
-public class StudentResource {
+public class  StudentResource {
 
     private final Logger log = LoggerFactory.getLogger(StudentResource.class);
 
